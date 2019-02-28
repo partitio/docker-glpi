@@ -93,7 +93,7 @@ cd - > /dev/null
 ## Remove installer
 echo 'Removing installer if needed...'
 # used to remove the installer after first installation
-if [ "x${GLPI_REMOVE_INSTALLER}" = 'xyes' ]; then
+if [ "x${GLPI_REMOVE_INSTALLER}" = 'xyes' ] || [ -f ${basedir}/config/config_db.php ]; then
   rm -f "${basedir}/install/install.php"
 fi
 
