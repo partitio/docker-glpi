@@ -81,7 +81,7 @@ RUN sed -i -e "s|;daemonize\s*=\s*yes|daemonize = no|g" /etc/php5/php-fpm.conf &
     chmod -R g=rX,o=--- /var/www
 
 EXPOSE 80/tcp
-VOLUME ["/var/www/files", "/var/www/config"]
+VOLUME ["/var/www/files", "/var/www/config", "/var/www/plugins"]
 WORKDIR "${GLPI_PATHS_ROOT}"
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 \
